@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Video</title>
+
+	</head>
+
+<body>
+	<center><h1>AI Weapon Detection</h1></center>
+	<!-- <center><img id="detect" style="background-color: #dedede;" src="{{ url_for('video_feed') }}" width="700" height="500"></center> -->
+
+	<center><img id="imgDetect" style="background-color: #dedede;" src="" width="700" height="500"></center>
+
+	<center><button id="btnStartDetection" onclick='startDetection()'>Start Detection</button></center>
+
+	<script type="text/javascript">
+		function startDetection(){
+			if (document.getElementById("imgDetect").getAttribute("src") == ""){
+				document.getElementById("imgDetect").setAttribute("src", "{{ url_for('video_feed') }}");	
+				document.getElementById("btnStartDetection").innerHTML = "Stop Detection";	
+
+				console.log("Detection started!");		
+			}else{
+				document.getElementById("imgDetect").setAttribute("src", "");	
+				document.getElementById("btnStartDetection").innerHTML = "Start Detection";	
+
+				console.log("Detection stoped!");
+			}
+		}
+	</script>
+</body>
+
+</html>
