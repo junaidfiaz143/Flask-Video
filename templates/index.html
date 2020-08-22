@@ -5,25 +5,25 @@
 	</head>
 
 <body>
-	<center><h1>AI Weapon Detection</h1></center>
+	<center><h1>WEBCAM</h1></center>
 	<!-- <center><img id="detect" style="background-color: #dedede;" src="{{ url_for('video_feed') }}" width="700" height="500"></center> -->
 
-	<center><img id="imgDetect" style="background-color: #dedede;" src="" width="700" height="500"></center>
+	<center><img id="imgPreview" style="background-color: #dedede;" src="" width="700" height="500"></center>
 
-	<center><button id="btnStartDetection" onclick='startDetection()'>Start Detection</button></center>
+	<center><button id="btnPlayBack" onclick='startDetection()'>Start</button></center>
 
 	<script type="text/javascript">
 		function startDetection(){
-			if (document.getElementById("imgDetect").getAttribute("src") == ""){
-				document.getElementById("imgDetect").setAttribute("src", "{{ url_for('video_feed') }}");	
-				document.getElementById("btnStartDetection").innerHTML = "Stop Detection";	
+			if (document.getElementById("imgPreview").getAttribute("src") == ""){
+				document.getElementById("imgPreview").setAttribute("src", "{{ url_for('video_feed') }}");	
+				document.getElementById("btnPlayBack").innerHTML = "Stop";	
 
-				console.log("Detection started!");		
+				console.log("Webcam started!");		
 			}else{
-				document.getElementById("imgDetect").setAttribute("src", "");	
-				document.getElementById("btnStartDetection").innerHTML = "Start Detection";	
+				document.getElementById("imgPreview").setAttribute("src", "");	
+				document.getElementById("btnPlayBack").innerHTML = "Start";	
 
-				console.log("Detection stoped!");
+				console.log("Webcam stopped!");
 			}
 		}
 	</script>
